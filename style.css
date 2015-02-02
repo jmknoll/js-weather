@@ -1,0 +1,26 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: black;
+	background-image: url("background.jpg");
+	background-size: cover;	
+}
+
+.main {
+	background: lightgrey;
+	width: 40%;
+	margin: 10% auto;
+	text-align: center;
+	padding: 15px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+#img {
+	transition-duration: 2.0s;
+} 
+.main:hover #img{
+	transform: scale(2,2);
+}
