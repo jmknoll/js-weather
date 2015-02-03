@@ -16,7 +16,7 @@ function success(position) {
 
       //get data from api and set relevant info to variables
       $.getJSON( weatherForecast, function( data ) {
-      		var location =data['location']['city'];
+      		var location = data['location']['city'] + ", " + data['location']['country_iso3166'];
 			var temperature = data['current_observation']['temp_f'];
 			var img = data['current_observation']['icon_url'];
 			var desc = data['current_observation']['weather'];
@@ -28,6 +28,8 @@ function success(position) {
 			$('#desc').html(desc);
 			$('#wind').html(wind);
 			$('#img').attr('src', img);
+			$('.lat').html("Latitude: " + (Math.round(position.coords.latitude * 100)/100) + ", ");
+			$('.lng').html("Longitude: " + (Math.round(position.coords.longitude * 100)/100));
 		});
 }
 
